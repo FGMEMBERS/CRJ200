@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>interior.ac</path>
+
+  <animation>
+  <type>material</type>
+  <object-name>floor</object-name>
+  <object-name>wall</object-name>
+  <object-name>ceiling</object-name>
+  <object-name>Seats.001</object-name>
+  <emission>
+    <red>0.6</red>
+    <green>0.6</green>
+    <blue>0.6</blue>
+    <factor-prop>controls/switches/cabin-lights[0]</factor-prop>	
+  </emission>
+</animation>
+
+</PropertyList>

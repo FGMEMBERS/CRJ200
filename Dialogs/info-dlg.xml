@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<name>info-crj700</name>
+    <layout>vbox</layout>
+	
+    <group>
+		<layout>hbox</layout>
+		<empty>
+			<stretch>1</stretch>
+		</empty>
+		<text>
+			<label>Welcome to the CRJ700/900/1000 series</label>
+		</text>
+		<empty>
+			<stretch>1</stretch>
+		</empty>
+		<button>
+			<pref-width>16</pref-width>
+			<pref-height>16</pref-height>
+			<legend>X</legend>
+			<keynum>27</keynum>
+			<border>2</border>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+	<hrule/>
+	<group>
+		<layout>vbox</layout>
+		<halign>left</halign>
+		<text>
+			<label>Welcome aboard! May I have your attention for the safety briefing...</label>
+			<color>
+				<red>0.9</red>
+				<green>0.9</green>
+				<blue>0.2</blue>
+			</color>
+		</text>
+		<text>
+			<label>This aircraft is equipped with documentation, tutorials and checklists.</label>
+		</text>
+		<text>
+			<label>Illuminated buttons at the dialog floor will guide you to this help.</label>
+		</text>
+		<text>
+			<label>Tutorials are highly recommended for pilots flying this aircraft for the first time.</label>
+		</text>
+		<text>
+			<label>As many details were added, please refer to ./Docs especially for the autopilot documentation</label>
+		</text>
+		<text>
+			<label>Thank you for your attention, we wish you a pleasant flight :)</label>
+			<color>
+				<red>0.0</red>
+				<green>0.9</green>
+				<blue>0.2</blue>
+			</color>
+		</text>
+		<checkbox>
+			<halign>center</halign>
+			<label>Do not show this on start</label>
+			<property>sim/config/hide-welcome-msg</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>sim/model/known-version</property>
+				<property>sim/aircraft-version</property>
+			</binding>
+			<live type="bool">true</live>
+		</checkbox>	
+		<group>
+			<layout>hbox</layout>
+			<button>
+				<legend>?</legend>
+				<binding>
+					<command>nasal</command>
+					<script>gui.showHelpDialog("/sim/help")</script>
+				</binding>
+			</button>
+			<button>
+				<legend>Checklists</legend>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>checklist</dialog-name>
+				</binding>
+			</button>			
+			<button>
+				<legend>Tutorials</legend>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>tutorial</dialog-name>
+				</binding>
+			</button>
+			<button>
+				<legend>./Docs</legend>
+				<binding>
+					<command>nasal</command>
+					<script>fgcommand("open-browser", props.Node.new({"path": "./Docs/index.html"}));</script>						
+				</binding>
+			</button>
+			<button>
+				<legend>Bugs/updates</legend>
+				<binding>
+					<command>open-browser</command>
+					<url>https://github.com/d-jsb/CRJ700-family/</url>
+				</binding>
+			</button>
+		</group>
+	</group>
+</PropertyList>

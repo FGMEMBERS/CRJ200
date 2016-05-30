@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Continental Express</name>
+        <texture>Liveries/CHQ.png</texture>
+      </livery>
+      <lights>
+        <texture>Liveries/CHQ-lights.png</texture>
+      </lights>
+    </model>
+  </sim>
+
+</PropertyList>
+

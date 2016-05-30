@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Adria Airways (Star Alliance)</name>
+        <texture>Liveries/ADR-S.png</texture>
+      </livery>
+      <lights>
+        <texture>Liveries/ADR-S-lights.png</texture>
+      </lights>
+    </model>
+  </sim>
+
+</PropertyList>
+

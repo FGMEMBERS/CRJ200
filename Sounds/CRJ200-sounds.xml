@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Bombardier CRJ700 series -->
+<!-- Internal sound configuration -->
+
+<PropertyList include="common-sounds.xml" omit-node="y">
+	<params>
+		<groundspeed-kt>velocities/groundspeed-kt</groundspeed-kt>
+		<airspeed-kt>velocities/airspeed-kt</airspeed-kt>
+	</params>
+	<fx>
+		<!-- APU, same for inside and outside -->
+		<apu>
+			<name>APU starting</name>
+			<mode>once</mode>
+			<path>Aircraft/CRJ200/Sounds/apu_start.wav</path>
+			<condition>
+				<and>
+					<property>controls/APU/off-on</property>
+					<greater-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>99</value>
+					</less-than>
+				</and>
+			</condition>
+		</apu>
+		<apu>
+			<name>APU running</name>
+			<mode>looped</mode>
+			<path>Aircraft/CRJ200/Sounds/apu_run.wav</path>
+			<condition>
+				<greater-than-equals>
+					<property>engines/engine[2]/rpm</property>
+					<value>99</value>
+				</greater-than-equals>
+			</condition>
+		</apu>
+		<apu>
+			<name>APU shutdown</name>
+			<mode>once</mode>
+			<path>Aircraft/CRJ200/Sounds/apu_shutdown.wav</path>
+			<condition>
+				<and>
+					<not>
+						<property>controls/APU/off-on</property>
+					</not>
+					<greater-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>99</value>
+					</less-than>
+				</and>
+			</condition>
+		</apu>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<c650>
+			<name>a1</name>
+			<path>FL2070/650_1.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a1</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/a1p</property>
+				<offset>0</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>a2</name>
+			<path>FL2070/650_2.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a2</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/a2p</property>
+				<offset>0</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>a3</name>
+			<path>FL2070/650_3.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a3</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/a3p</property>
+				<offset>0</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>a4</name>
+			<path>FL2070/650_4.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a4</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/a4p</property>
+				<offset>0.28</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>a5</name>
+			<path>FL2070/650_5.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a4</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/a4p</property>
+				<offset>0.28</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>20</y>
+			</position>
+		</c650>
+		
+		
+		
+		<c650>
+			<name>b1</name>
+			<path>FL2070/650_1.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/b1</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/b1p</property>
+				<offset>0</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>-20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>b2</name>
+			<path>FL2070/650_2.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/b2</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/b2p</property>
+				<offset>0</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>-20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>b3</name>
+			<path>FL2070/650_3.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/b3</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/b3p</property>
+				<offset>0</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>-20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>b4</name>
+			<path>FL2070/650_4.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/b4</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/b4p</property>
+				<offset>0.28</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>-20</y>
+			</position>
+		</c650>
+		
+		<c650>
+			<name>b5</name>
+			<path>FL2070/650_5.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/b4</property>
+			</volume>
+			<volume>
+				<property>c650/in</property>
+			</volume>
+			<pitch>
+				<property>c650/b4p</property>
+				<offset>0.28</offset>
+			</pitch>
+			<position>
+				<x>0</x>
+				<z>0</z>
+				<y>-20</y>
+			</position>
+		</c650>
+		
+		
+		
+		
+		
+		
+		
+		
+		<c650>
+			<name>xa1</name>
+			<path>FL2070/x650_1.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a1</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a1p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xa1-02</name>
+			<path>FL2070/x650_1.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a2</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a2p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xa2</name>
+			<path>FL2070/x650_2.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a3</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a3p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xa3</name>
+			<path>FL2070/x650_3.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a3</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a3p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xa4</name>
+			<path>FL2070/x650_4.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a4</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a4p</property>
+				<offset>0.28</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xa5</name>
+			<path>FL2070/x650_5.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a4</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a4p</property>
+				<offset>0.28</offset>
+			</pitch>
+		</c650>
+		
+		
+		
+		
+		
+		
+		<c650>
+			<name>xb1</name>
+			<path>FL2070/x650_1.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a1</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a1p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xb1-02</name>
+			<path>FL2070/x650_1.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a2</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a2p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xb2</name>
+			<path>FL2070/x650_2.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a3</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a3p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xb3</name>
+			<path>FL2070/x650_3.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a3</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a3p</property>
+				<offset>0</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xb4</name>
+			<path>FL2070/x650_4.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a4</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a4p</property>
+				<offset>0.28</offset>
+			</pitch>
+		</c650>
+		
+		<c650>
+			<name>xb5</name>
+			<path>FL2070/x650_5.wav</path>
+			<mode>looped</mode>
+			<volume>
+				<property>c650/a4</property>
+			</volume>
+			<volume>
+				<property>c650/out</property>
+			</volume>
+			<pitch>
+				<property>c650/a4p</property>
+				<offset>0.28</offset>
+			</pitch>
+		</c650>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<!-- Gear touchdown -->
+		<gear>
+			<name>Nose gear touchdown</name>
+			<path>Aircraft/CRJ200/Sounds/squeaking-front.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.95</offset>
+			</volume>
+			<position>
+				<x>-14</x>
+				<y>0.01</y>
+				<z>-3.201</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		<gear>
+			<name>Nose gear touchdown 2</name>
+			<path>Aircraft/CRJ200/Sounds/pressure-mid.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.95</offset>
+			</volume>
+			<position>
+				<x>-14</x>
+				<y>0.01</y>
+				<z>-3.201</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		
+		<rumble><!-- nose internal -->
+			<name>Nose gear rumble</name>
+			<mode>looped</mode>
+			<path>Aircraft/CRJ200/Sounds/rumble.wav</path>
+			<condition>
+				<and>
+					<property>gear/gear[0]/wow</property>
+					<property>sim/current-view/internal</property>
+				</and>
+			</condition>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<type>log</type>
+				<factor>0.3</factor>
+			</volume>
+			<position>
+				<x>-14</x>
+				<y>0.01</y>
+				<z>-3.201</z>
+			</position>
+			<reference-dist>6</reference-dist>
+			<max-dist>25</max-dist>
+		</rumble>
+		<flaps-lever>
+			<name>Flapslever</name>
+			<path>Aircraft/CRJ200/Sounds/flaps-lever.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>sim/sound/flaps-lever</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+			<position>
+				<x>-13.7</x>
+				<y>0.1760</y>
+				<z>-1.2</z>
+			</position>
+			<max-dist>2</max-dist>
+			<reference-dist>1</reference-dist>
+		</flaps-lever>
+	</fx>	
+</PropertyList>

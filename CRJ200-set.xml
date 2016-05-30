@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Bombardier CRJ200 series -->
+<!-- Aircraft property settings specific to the CRJ200 -->
+
+<PropertyList include="CRJ200-main.xml">
+    <sim include="crj200-views.xml">
+        <description>Bombardier CRJ200</description>
+        <author>Joshua Wilson/Nick I (updated by D-ECHO using parts of the CRJ700-family by Ryan Miller, Henning S.)</author>
+        <status>production</status>
+        <aircraft-version>3</aircraft-version>
+		
+        <flight-model>yasim</flight-model>
+        <aero>CRJ200</aero>
+
+        <model>
+            <path>Aircraft/CRJ200/Models/CRJ200.xml</path>
+            <variant type="int">0</variant>
+            <door>
+                <position-x-m type="float">-11.519</position-x-m>
+                <position-y-m type="float">-1.139</position-y-m>
+                <position-z-m type="float">-1.796</position-z-m>
+                <jetway-hood-deg type="float">3</jetway-hood-deg>
+            </door>
+			<has-slats type="bool">true</has-slats>
+			<limits>
+				<mtow-rw-m>1564</mtow-rw-m>
+				<mlw-rw-m>1536</mlw-rw-m>
+				<mtow-lb>72750</mtow-lb>
+				<mlw-lb>67000</mlw-lb>
+			</limits>
+			<dimensions>
+				<nose-distance-m>16</nose-distance-m>
+				<cockpit-offset-x>0</cockpit-offset-x>
+			</dimensions>	
+		</model>
+        
+		<sound>
+			<path>Aircraft/CRJ200/Sounds/CRJ200-sounds.xml</path>
+		</sound>
+
+        <dimensions>
+            <radius-m type="float">32.51</radius-m>
+        </dimensions>
+
+		<weight n="1">
+            <weight-lb>10000</weight-lb>
+            <max-lb>18800</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
+
+        <menubar>
+            <default>
+                <menu n="100">
+                    <label>Bombardier CRJ200</label>
+                </menu>
+            </default>
+        </menubar>
+    </sim>
+</PropertyList>

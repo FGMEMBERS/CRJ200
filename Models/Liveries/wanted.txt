@@ -1,0 +1,21 @@
+List of wanted CRJ-200 liveries
+
+Air Canada Jazz
+Brit Air
+Tyrolean Airways/Austrian Arrows
+Cimber Air
+Eurowings (Lufthansa Regional)
+MexicanaLink
+UTair Aviation
+South African Express
+AirTran JetConnect
+Old US Airways
+NWA Airlink
+American West Express
+Maersk Air (British Airways regional)
+More Adria Airways
+Go! Airlines
+
+Air Nostrum should be updated to most recent mapping.
+
+Lufthansa CityLine needs upgrade to 2048 x 2048 resolution and a real registration number.

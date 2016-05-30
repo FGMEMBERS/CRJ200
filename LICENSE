@@ -1,0 +1,32 @@
+All files in this project are licensed under the GNU General Public
+License, version 2 or above.
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+All documentation (Docs/ directory) is licensed under the GNU Free Documentation
+License, version 1.3 or above.
+https://www.gnu.org/copyleft/fdl.html
+
+The aircraft is greatly based on the CRJ700-family, but only files from the GPL version of it (found on https://github.com/FGMEMBERS/CRJ700-family) plus new XML files and CRJ700-flightdeck.ac from the Non-GPL version (found on https://github.com/FGMEMBERS-NONGPL/CRJ700-family) which were marked as GPL have been used.
+Quote from the the LICENSE file of CRJ700-family Version 1.5 (https://github.com/FGMEMBERS-NONGPL/CRJ700-family/blob/master/LICENSE):
+###
+"All models (AC3D format) and textures (PNG format or XCF format) are licensed
+under Creative Commons Attribution 4.0 Unported (CC-BY) or any later version.
+https://creativecommons.org/licenses/by/4.0/
+
+Exceptions: The following files are licensed under the GNU General Public
+License, version 2 or above.
+ * Models/Flightdeck/CRJ700-flightdeck.ac
+[...]
+All markup (XML), scripts (Nasal), and sounds (WAV) are licensed under the GNU
+General Public License, version 2 or above.
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+All documentation (Docs/ directory) is licensed under the GNU Free Documentation
+License, version 1.3 or above.
+https://www.gnu.org/copyleft/fdl.html"
+###
+
+Please note that I've carefully tried to only take the GPL files. If I however used a file that is licensed under another license, please contact me on
+echoair - at - t-online.de and I'll remove it/replace it by a GPL file :D
+
+A special thanks also goes to FL2070 who did the sounds for the Bombardier Challenger 650 (GPL) which were adapted to this aircraft.

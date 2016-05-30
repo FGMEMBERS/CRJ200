@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Bombardier CRJ700 series -->
+<!-- Flight recorder configuration -->
+<!-- Based on the 777-200ER flight recorder by Thorsten Brehm -->
+
+<PropertyList>
+
+	<replay-config type="int">0</replay-config>
+
+	<config>
+		<name>Bombardier CRJ700 flight recorder</name>
+
+		<!-- Generic signals -->
+		<!--signals include="/Aircraft/Generic/flightrecorder/components/environment.xml" /-->
+		<signals include="/Aircraft/Generic/flightrecorder/components/position.xml" />
+		<signals include="/Aircraft/Generic/flightrecorder/components/controls.xml" />
+		<signals include="/Aircraft/Generic/flightrecorder/components/surfaces.xml" />
+		<signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml">
+			<count type="int">4</count>
+		</signals>
+		<signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
+			<count type="int">3</count>
+		</signals>
+		<signals include="/Aircraft/Generic/flightrecorder/components/tanks.xml">
+			<count type="int">3</count>
+		</signals>
+
+
+		<!-- Custom properties -->
+		<signals>
+			<signal>
+				<type>float</type>
+				<property>velocities/groundspeed-kt</property>
+			</signal>
+			<!-- Engines -->
+			<signals>
+				<count type="int">2</count>
+				<signal>
+					<type>bool</type>
+					<property>controls/engines/engine[%i]/cutoff</property>
+				</signal>
+				<signal>
+					<type>bool</type>
+					<property>controls/engines/engine[%i]/reverser</property>
+				</signal>
+				<signal>
+					<type>bool</type>
+					<property>controls/engines/engine[%i]/reverser-armed</property>
+				</signal>
+				<signal>
+					<type>int</type>
+					<property>controls/engines/engine[%i]/thrust-mode</property>
+				</signal>
+				<signal>
+					<type>bool</type>
+					<property>engines/engine[%i]/on-fire</property>
+				</signal>
+				<signal>
+					<type>float</type>
+					<property>engines/engine[%i]/reverser-pos-norm</property>
+				</signal>
+				<signal>
+					<type>bool</type>
+					<property>engines/engine[%i]/running-nasal</property>
+				</signal>
+
+			</signals>
+			<!-- APU -->
+			<signal>
+				<type>bool</type>
+				<property>controls/APU/electronic-control-unit</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>engines/apu/egt-degc</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>engines/apu/on-fire</property>
+			</signal>
+			<!-- Lighting controls -->
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/beacon</property>
+			</signal>
+			<signals>
+				<count type="int">3</count>
+				<signal>
+					<type>bool</type>
+					<property>controls/lighting/landing-lights[%i]</property>
+				</signal>
+			</signals>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/logo-lights</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/nav-lights</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/strobe</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/taxi-lights</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/wing-lights</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/dome</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>controls/lighting/display-norm</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/standby-compass</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/lighting/panel-lights</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>controls/lighting/panel-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>controls/lighting/panel-flood-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>controls/lighting/panel-overhead-norm</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/switches/seatbelt-sign</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/switches/no-smoking-sign</property>
+			</signal>
+
+			<!-- other controls -->
+			<signals>
+				<count type="int">3</count>
+				<signal>
+					<type>bool</type>
+					<property>controls/hydraulic/system[%i]/pump-a</property>
+				</signal>
+				<signal>
+					<type>int</type>
+					<property>controls/hydraulic/system[%i]/pump-b</property>
+				</signal>
+			</signals>
+			<signal>
+				<type>int</type>
+				<property>controls/pneumatic/cross-bleed</property>
+			</signal>
+			<signal>
+				<type>int</type>
+				<property>controls/pneumatic/bleed-valve</property>
+			</signal>
+			<signal>
+				<type>int</type>
+				<property>controls/pneumatic/bleed-source</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/pneumatic/isol</property>
+			</signal>
+		
+			<!-- Landing gear -->
+			<signal>
+				<type>float</type>
+				<property>controls/gear/tiller-steer-deg</property>
+			</signal>
+
+			<!-- Aircraft-specific flight controls -->
+			<signal>
+				<type>int</type>
+				<property>controls/flight/ground-lift-dump</property>
+			</signal>
+
+			<!-- Aircraft-specific control surfaces -->
+			<signal>
+				<type>float</type>
+				<property>surface-positions/left-wiper-pos-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>surface-positions/right-wiper-pos-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>surface-positions/slat-pos-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>controls/flight/slats-cmd</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>controls/flight/flaps-cmd</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/flight/flaps-start-snd</property>
+			</signal>
+			<signal>
+				<type>bool</type>
+				<property>controls/flight/flaps-stop-snd</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>surface-positions/spoiler-ground-pos-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>surface-positions/left-speedbrake-pos-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>surface-positions/right-speedbrake-pos-norm</property>
+			</signal>
+
+			<signal>
+				<type>float</type>
+				<property>/sim/model/door-positions/pax-left</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>/sim/model/door-positions/pax-right</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>/sim/model/door-positions/av-bay</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>/sim/model/door-positions/fwd-cargo</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>/sim/model/door-positions/ctr-cargo</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>/sim/model/door-positions/aft-cargo</property>
+			</signal>	
+		</signals>
+	</config>
+
+</PropertyList>
