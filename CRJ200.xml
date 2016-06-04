@@ -73,43 +73,36 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
 
        <!--inboard segment-->
        <wing x="-.75" y="1.5" z="-0.35" length="2.63" chord="4.9" sweep="20.5" taper=".615" dihedral="2.5" camber=".1" incidence="3" twist="-2.0">
-          <stall aoa="17" width="4.2" peak="1.5"/>
-          <!--flap0 start="0" end="1" lift="1.72" drag="0.9"/-->
-          <flap0 start="0" end="1" lift="1.55" drag="1.1"/>
-          <spoiler start="0.22" end="1" lift="0.2" drag="2.0"/>
-          <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-          <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
-          <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
-          <control-input axis="/controls/flight/ib-speedbrake" control="SPOILER"/>
-          <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-          <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
-          <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
-          <control-output control="SPOILER" prop="/surface-positions/ib-speedbrake-pos-norm"/>
-          <control-output control="SPOILER" prop="sim/multiplay/generic/float[3]"/>
-          <control-speed control="FLAP0" transition-time="64"/>
-          <control-speed control="SPOILER" transition-time="0.7"/>
+		<stall aoa="10.0" width="7" peak="1.5" />
+		<flap0 start="0.05" end="0.99" lift="1.4" drag="2.0" />
+		<spoiler start="0.18" end="0.94" lift="0.0" drag="2.0" />
+		<control-input axis="/controls/flight/flaps" control="FLAP0" />
+		<control-input axis="/surface-positions/spoiler-ground-pos-norm" control="SPOILER" />
+		<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm" />
+		<control-output control="SLAT" prop="/surface-positions/slat-pos-norm" />
+		<control-output control="SPOILER" side="left" prop="/surface-positions/fdm-spoiler-inner-pos-norm" />
+		<control-speed control="FLAP0" transition-time="40.0" />
+		<control-speed control="SPOILER" transition-time="0.7" />
        </wing>
 
        <!--outboard segment-->
        <mstab x="-1.67" y="3.96" z="-0.307" length="7.8" chord="3.05" sweep="22.2" taper=".45" dihedral="3.2" camber=".1" incidence="1" twist="-1">
-          <stall aoa="17" width="4.2" peak="1.5"/>
-          <flap0 start="0.015" end=".513" lift="1.33" drag="1.1"/>
-          <!--flap0 start="0.015" end=".513" lift="1.6" drag="0.9"/-->
-          <flap1 start=".513" end=".79" lift="1.15" drag="1.4"/>
-          <spoiler start="0.08" end=".5" lift="0.2" drag="2.0"/>
-          <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-          <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
-          <!--control-input axis="/controls/flight/aileron" control="SPOILER" side="right" src0="0" src1="1" dst0="0" dst1=".25"/>
-          <control-input axis="/controls/flight/aileron" control="SPOILER" side="left" src0="0" src1="-1" dst0="0" dst1=".25"/-->
-          <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
-          <control-input axis="/controls/flight/ob-speedbrake" control="SPOILER"/>
-          <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-          <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
-          <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
-          <control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
-          <control-speed control="FLAP0" transition-time="64"/>
-          <control-speed control="SPOILER" transition-time="0.7"/>
-          <control-speed control="FLAP1" transition-time="0.3"/>
+		<stall aoa="8.0" width="5" peak="0.8" />
+		<flap0 start="0.0" end="0.51" lift="1.4" drag="2.0" />
+		<flap1 start="0.51" end="0.8" lift="1.35" drag="1.3" />
+		<spoiler start="0.06" end="0.31" lift="0.0" drag="2.0" />
+		<control-input axis="/controls/flight/flaps" control="FLAP0" />
+		<control-input axis="/fcs/aileron-cmd-norm" control="FLAP1" split="true" />
+		<control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true" />
+		<control-input axis="/controls/flight/flaps" control="SLAT" />
+		<control-input axis="/controls/flight/speedbrake" control="SPOILER" />
+		<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm" />
+		<control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm" />
+		<control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm" />
+		<control-output control="SPOILER" side="left" prop="/surface-positions/fdm-spoiler-outer-pos-norm" />
+		<control-speed control="FLAP0" transition-time="40.0" />
+		<control-speed control="FLAP1" transition-time="2.0" />
+		<control-speed control="SPOILER" transition-time="0.7" />
        </mstab>
 
        <!--Winglets-->

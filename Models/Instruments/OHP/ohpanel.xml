@@ -561,10 +561,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>
-					CRJ700.engine1.start();
-				</script>
+				<command>property-assign</command>
+				<property>controls/engines/engine[0]/starter</property>
+				<value type="bool">true</value>
 			</binding>
 		</action>
 	</animation>
@@ -594,10 +593,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>
-					CRJ700.engine1.abort_start();
-				</script>
+				<command>property-assign</command>
+				<property>controls/engines/engine[0]/starter</property>
+				<value type="bool">false</value>
 			</binding>
 		</action>
 	</animation>
@@ -609,10 +607,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>
-					CRJ700.engine2.start();
-				</script>
+				<command>property-assign</command>
+				<property>controls/engines/engine[1]/starter</property>
+				<value type="bool">true</value>
 			</binding>
 		</action>
 	</animation>
@@ -642,10 +639,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>
-					CRJ700.engine2.abort_start();
-				</script>
+				<command>property-assign</command>
+				<property>controls/engines/engine[1]/starter</property>
+				<value type="bool">false</value>
 			</binding>
 		</action>
 	</animation>
