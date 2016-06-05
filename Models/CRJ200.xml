@@ -1237,20 +1237,6 @@
   </axis>
  </animation>
 
- <animation>
-  <type>translate</type>
-  <object-name>ngltorque</object-name>
-  <object-name>nosegear</object-name>
-  <object-name>ngstrut</object-name>
-  <property>sim/multiplay/generic/float[0]</property>
-   <factor>1</factor>
-  <axis>
-   <x>0</x>
-   <y>0</y>
-   <z>1</z>
-  </axis>
- </animation>
-
  <!--<animation>
   <type>rotate</type>
   <object-name>ngltorque</object-name>
