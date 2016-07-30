@@ -5,7 +5,7 @@
 
 <PropertyList>
 	
-	<sim>
+	<sim include="Aircraft/Generic/Human/Include/walker-include.xml">
 	<description>Bombardier CRJ-200</description>
 	<author>Joshua Wilson/Nick I</author>
 	<status>Front Page Release</status>

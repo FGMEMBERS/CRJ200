@@ -112,7 +112,7 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
        <hstab x="-14.95" y="0.15" z="4.7" chord="2.3" length="3.5" taper=".44" sweep="20" dihedral="-1" effectiveness="1">
           <stall aoa="16" width="10" peak="1.5"/>
           <flap0 start="0" end=".93" lift="1.5" drag="1.2"/>
-          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+          <control-input axis="fcs/elevator-cmd-norm" control="FLAP0"/>
           <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
           <control-output control="FLAP0"  prop="/surface-positions/elevator-pos-norm"/>
        </hstab>
@@ -120,7 +120,7 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
        <vstab x="-12.2" y="0.00" z="1.7" chord="3.6" length="3.8" taper="0.75" sweep="35" effectiveness="1.5">
           <stall aoa="15" width="2" peak="1.5"/>
           <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
-          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+          <control-input axis="fcs/rudder-cmd-norm" control="FLAP0" invert="true"/>
           <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
           <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
        </vstab>

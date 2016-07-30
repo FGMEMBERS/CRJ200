@@ -6,10 +6,8 @@
 
   <animation>
   <type>material</type>
-  <object-name>floor</object-name>
-  <object-name>wall</object-name>
-  <object-name>ceiling</object-name>
-  <object-name>Seats.001</object-name>
+  <object-name>interior</object-name>
+  <object-name>seats</object-name>
   <emission>
     <red>0.6</red>
     <green>0.6</green>

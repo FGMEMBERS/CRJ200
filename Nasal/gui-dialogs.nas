@@ -1,5 +1,5 @@
 ## Aircraft-specific dialogs
-var aircraft_path = "Aircraft/CRJ200/"~"Dialogs/";
+var aircraft_path = "Aircraft/CRJ700-family/"~"Dialogs/";
 var dialogs = {
     adc: gui.Dialog.new("sim/gui/dialogs/adc/dialog", aircraft_path~"adc-dlg.xml"),
     apdev: gui.Dialog.new("sim/gui/dialogs/apdev/dialog", aircraft_path~"autopilot-dev-dlg.xml"),
@@ -17,6 +17,6 @@ var dialogs = {
     tiller: gui.Dialog.new("sim/gui/dialogs/tiller/dialog", aircraft_path~"tiller-dlg.xml"),
     viewselect: gui.Dialog.new("sim/gui/dialogs/views-crj700/dialog", aircraft_path~"viewselect-dlg.xml"),
 };
-gui.menuBind("autopilot", "CRJ200.dialogs.autopilot.open();");
-gui.menuBind("radio", "CRJ200.dialogs.radio.open();");
+gui.menuBind("autopilot", "CRJ700.dialogs.autopilot.open();");
+gui.menuBind("radio", "CRJ700.dialogs.radio.open();");
 dialogs.eicas.open();

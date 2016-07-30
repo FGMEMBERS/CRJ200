@@ -1,4 +1,4 @@
-## Bombardier CRJ200 series
+## Bombardier CRJ700 series
 ## Nasal control wrappers
 ###########################
 
@@ -140,8 +140,8 @@ var toggleArmReversers = func
 
 var reverseThrust = func
 {
-	if (getprop("systems/hydraulic/outputs/left-reverser")) CRJ200.engines[0].toggle_reversers();
-    if (getprop("systems/hydraulic/outputs/right-reverser")) CRJ200.engines[1].toggle_reversers();
+	if (getprop("systems/hydraulic/outputs/left-reverser")) CRJ700.engines[0].toggle_reversers();
+    if (getprop("systems/hydraulic/outputs/right-reverser")) CRJ700.engines[1].toggle_reversers();
 };
 
 var incThrustModes = func(v)

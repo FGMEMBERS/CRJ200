@@ -16,7 +16,7 @@
 
 <model>
  <name>Pushback</name>
- <path>Models/Airport/Pushback/Goldhofert.xml</path>
+ <path>Pushback/pushback.xml</path>
  <offsets>
   <x-m>-10.1</x-m>
   <y-m>0</y-m>
@@ -27,6 +27,22 @@
 <model>
  <name>Interior</name>
  <path>Aircraft/CRJ200/Models/interior.xml</path>
+</model>
+<model>
+ <path>Aircraft/CRJ200/Models/thrust_flame.xml</path>
+ <offsets>
+  <x-m>10</x-m>
+  <y-m>2</y-m>
+  <z-m>1.7</z-m>
+ </offsets>
+</model>
+<model>
+ <path>Aircraft/CRJ200/Models/thrust_flame.xml</path>
+ <offsets>
+  <x-m>10</x-m>
+  <y-m>-2</y-m>
+  <z-m>1.7</z-m>
+ </offsets>
 </model>
 
 <model>
@@ -124,7 +140,7 @@
   </offsets>
 </model>-->
 
-<animation>
+<!--<animation>
       <type>material</type>
       <object-name>aftlightedfuse</object-name>
       <object-name>lightedfin</object-name>
@@ -142,7 +158,7 @@
       <property-base>sim/model/lights</property-base>
       <texture-prop>texture</texture-prop>
       <texture>UAX-lights.png</texture>
-</animation>
+</animation>-->
 
 <animation>
       <type>material</type>
@@ -182,6 +198,7 @@
       <object-name>Misc</object-name>
       <object-name>antennae</object-name>
       <object-name>doorFL</object-name>
+      <object-name>doorFR</object-name>
       <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
       <texture>UAX.png</texture>
@@ -210,6 +227,7 @@
       <object-name>OHexit1</object-name>
       <object-name>hstab</object-name>
       <object-name>doorFL</object-name>
+      <object-name>doorFR</object-name>
       <object-name>lgeardoor</object-name>
       <object-name>rgeardoor</object-name>
       <object-name>lhaileron</object-name>
@@ -314,8 +332,9 @@
 		<type>rotate</type>
 		<object-name>doorFL</object-name>
 		<object-name>doorFLint</object-name>
+		<object-name>StairHandles</object-name>
 		<property>sim/model/door-positions/pax-left/position-norm</property>
-		<factor>163</factor>
+		<factor>166.344</factor>
 		<axis>
 			<x>1</x>
 			<y>0</y>
@@ -325,6 +344,54 @@
 			<x-m>-11.062</x-m>
 			<y-m>-1.38575</y-m>
 			<z-m>-0.00395</z-m>
+		</center>
+	</animation>
+    <animation>
+        <type>pick</type>
+        <object-name>doorFR</object-name>
+        <object-name>doorFRint</object-name>
+        <action>
+            <button>0</button>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    CRJ200.doors.fwd_service.toggle();
+                </script>
+            </binding>
+        </action>
+    </animation>
+	<animation>
+		<type>rotate</type>
+        <object-name>doorFR</object-name>
+        <object-name>doorfix</object-name>
+        <object-name>doorFRint</object-name>
+		<property>sim/model/door-positions/pax-right/position-norm</property>
+		<factor>166.344</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<center>
+			<x-m>-7.51953</x-m>
+			<y-m>1.47506</y-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+        <object-name>doorFR</object-name>
+        <object-name>doorFRint</object-name>
+		<property>sim/model/door-positions/pax-right/position-norm</property>
+		<factor>-166.344</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<center>
+			<x-m>-7.17552</x-m>
+			<y-m>1.46368</y-m>
 		</center>
 	</animation>
     <!-- Wiper blades -->
@@ -986,6 +1053,7 @@
     <blue>0.9</blue>
   <factor-prop>sim/multiplay/generic/int[2]</factor-prop>
   </emission>
+
  </animation>
 
  <animation>
@@ -1300,7 +1368,7 @@
 <animation>
 	<type>spin</type>
 	<object-name>nosegear</object-name>
-	<property>sim/multiplay/generic/float[5]</property>
+	<property>gear/gear/rollspeed-ms</property>
 	<factor>10</factor>
 	<center>
 		<x-m>-10.098</x-m>
@@ -1483,12 +1551,12 @@
 <animation>
 	<type>spin</type>
 	<object-name>leftmaingear</object-name>
-	<property>sim/multiplay/generic/float[6]</property>
+	<property>gear/gear[1]/rollspeed-ms</property>
 	<factor>10</factor>
 	<center>
-		<x-m>2.369</x-m>
-		<y-m>1.676</y-m>
-		<z-m>-1.538</z-m>
+		<x-m>2.36848</x-m>
+		<y-m>-1.676</y-m>
+		<z-m>-1.53629</z-m>
 	</center>
 	<axis>
 		<x>0</x>
@@ -1666,12 +1734,12 @@
 <animation>
 	<type>spin</type>
 	<object-name>rightmaingear</object-name>
-	<property>sim/multiplay/generic/float[7]</property>
+	<property>gear/gear[2]/rollspeed-ms</property>
 	<factor>10</factor>
 	<center>
-		<x-m>2.369</x-m>
+		<x-m>2.36848</x-m>
 		<y-m>-1.676</y-m>
-		<z-m>-1.538</z-m>
+		<z-m>-1.53629</z-m>
 	</center>
 	<axis>
 		<x>0</x>
@@ -1708,7 +1776,7 @@
   <type>rotate</type>
   <object-name>lhelevator</object-name>
   <object-name>lhlightedelevator</object-name>
-  <property>controls/flight/elevator</property>
+  <property>surface-positions/elevator-pos-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>   
   <center>
@@ -1727,7 +1795,7 @@
   <type>rotate</type>
   <object-name>rhelevator</object-name>
   <object-name>rhlightedelevator</object-name>
-  <property>controls/flight/elevator</property>
+  <property>surface-positions/elevator-pos-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>   
   <center>
@@ -1952,7 +2020,7 @@
    <z>-0.035</z>
   </axis>
  </animation>
-
+<!--
 <animation>
   <type>rotate</type>
   <object-name>lhobspoilerb</object-name>
@@ -1982,7 +2050,7 @@
    <z>-0.035</z>
   </axis>
  </animation>
-
+-->
  <animation>
   <type>rotate</type>
   <object-name>rhibspoiler</object-name>
@@ -2072,7 +2140,7 @@
    <z>0.035</z>
   </axis>
  </animation>
-
+<!--
 <animation>
   <type>rotate</type>
   <object-name>rhobspoilerb</object-name>
@@ -2102,7 +2170,7 @@
    <z>0.035</z>
   </axis>
  </animation>
-
+-->
  <animation>
   <type>spin</type>
   <object-name>eng1fan</object-name>
@@ -2159,6 +2227,43 @@
   </axis>
  </animation>
 
+	<!-- Ram air turbine -->
+	<animation>
+		<type>spin</type>
+		<object-name>ram.prop</object-name>
+		<property>systems/AC/system/adg-rpm</property>
+<condition><equals>
+		<property>systems/AC/system/adg-position-norm</property>
+<value>1</value></equals></condition>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>1.2147</y-m>
+			<z-m>-0.43801</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>ram.base</object-name>
+		<object-name>ram.prop</object-name>
+		<property>systems/AC/system/adg-position-norm</property>
+		<interpolation>
+			<entry><ind>1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>-120</dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>-10.28705</x1-m>
+			<y1-m>0.97972</y1-m>
+			<z1-m>-0.08044</z1-m>
+			<x2-m>-10.28705</x2-m>
+			<y2-m>0.81398</y2-m>
+			<z2-m>-0.28193</z2-m>
+		</axis>
+	</animation>
 <!--effects-->
 
 <!--contrails from 737-300-->

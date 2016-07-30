@@ -3,8 +3,7 @@
 ###########################
 
 ## Livery select
-
-aircraft.livery.init("Aircraft/CRJ200/Models/Liveries");
+aircraft.livery.init("Aircraft/CRJ200/Models/Liveries/");
 
 ## Switch sounds
 var Switch_sound = {
