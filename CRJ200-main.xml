@@ -333,6 +333,18 @@
 						</binding>
 					</item>
 					
+		<item>
+                        <label>autothrottle</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>
+	  var mal = gui.Dialog.new("/sim/gui/dialogs/CRJ200/menu/dialog", 
+                                                              "Aircraft/CRJ200/Dialogs/autothrottle-dlg.xml");
+        mal.open();
+       </script>
+                        </binding>
+                    </item>
+
 				<!-- for development -->
 					
 					<!-- 					<item>
