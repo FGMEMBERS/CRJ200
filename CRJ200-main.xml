@@ -321,6 +321,18 @@
 							</script>
 						</binding>
 					</item>
+					item>
+						<label>Announcements</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								var mal = gui.Dialog.new("/sim/gui/dialogs/announce/dialog",
+								"Aircraft/CRJ200/Systems/announcements-dlg.xml");
+								mal.open();
+							</script>
+						</binding>
+					</item>
+					
 				<!-- for development -->
 					
 					<!-- 					<item>
