@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Bombardier CRJ700 series -->
+<!-- Bombardier CRJ200 series -->
 <!-- Internal sound configuration -->
 
 <PropertyList include="common-sounds.xml" omit-node="y">
@@ -322,22 +322,47 @@
 			</pitch>
 		</c650>
 		
-		<c650>
-			<name>xa2</name>
-			<path>FL2070/x650_2.wav</path>
-			<mode>looped</mode>
-			<volume>
-				<property>c650/a3</property>
-			</volume>
-			<volume>
-				<property>c650/out</property>
-			</volume>
-			<pitch>
-				<property>c650/a3p</property>
-				<offset>0</offset>
-			</pitch>
-		</c650>
-		
+		<engine>
+		<name>low l out</name>
+		<mode>looped</mode>
+		<path>Aircraft/CRJ200/Sounds/xlow.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.044</factor>
+			<max>1</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.02</factor>
+			<max>2</max>
+		</pitch>
+	</engine>
+	<engine>
+		<name>low r out</name>
+		<mode>looped</mode>
+		<path>Aircraft/CRJ200/Sounds/xlow.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.044</factor>
+			<max>1</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.02</factor>
+			<max>2</max>
+		</pitch>
+	</engine>
+
 		<c650>
 			<name>xa3</name>
 			<path>FL2070/x650_3.wav</path>
