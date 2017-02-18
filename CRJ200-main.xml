@@ -321,7 +321,7 @@
 							</script>
 						</binding>
 					</item>
-					item>
+					<item>
 						<label>Announcements</label>
 						<binding>
 							<command>nasal</command>
